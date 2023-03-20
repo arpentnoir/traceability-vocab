@@ -1,22 +1,66 @@
 {
   "name": "@arpentnoir/traceability-vocab",
-  "version": "1.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "Veramo plugin for working with W3C JSON-LD Verifiable Credentials & Presentations.",
+  "version": "5.1.2",
+  "main": "build/index.js",
+  "exports": {
+    ".": "./build/index.js",
+    "./build/plugin.schema.json": "./build/plugin.schema.json"
+  },
+  "types": "build/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "generate-plugin-schema": "node ../cli/bin/veramo.js dev generate-plugin-schema"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arpentnoir/traceability-vocab.git"
+  "veramo": {
+    "pluginInterfaces": {
+      "ICredentialIssuerLD": "./src/action-handler.ts"
+    }
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/arpentnoir/traceability-vocab/issues"
+  "dependencies": {
+    "@digitalcredentials/ed25519-signature-2020": "^3.0.2",
+    "@digitalcredentials/ed25519-verification-key-2020": "^4.0.0",
+    "@digitalcredentials/jsonld": "^5.2.1",
+    "@digitalcredentials/jsonld-signatures": "^9.3.1",
+    "@digitalcredentials/vc": "^5.0.0",
+    "@transmute/credentials-context": "^0.7.0-unstable.79",
+    "@transmute/ed25519-signature-2018": "^0.7.0-unstable.79",
+    "@transmute/json-web-signature": "^0.7.0-unstable.79",
+    "@veramo-community/lds-ecdsa-secp256k1-recovery2020": "uport-project/EcdsaSecp256k1RecoverySignature2020",
+    "@veramo/core-types": "^5.1.2",
+    "@veramo/utils": "^5.1.2",
+    "cross-fetch": "^3.1.5",
+    "debug": "^4.3.3",
+    "did-resolver": "^4.0.1",
+    "uint8arrays": "^3.0.0"
   },
-  "homepage": "https://github.com/arpentnoir/traceability-vocab#readme",
+  "resolutions": {
+    "@types/react": "18.0.26",
+    "jsonld": "npm:@digitalcredentials/jsonld@^5.2.1"
+  },
+  "devDependencies": {
+    "@types/debug": "4.1.7",
+    "borc": "3.0.0",
+    "typescript": "4.9.4"
+  },
+  "files": [
+    "build/**/*",
+    "src/**/*",
+    "contexts/**/*.json",
+    "plugin.schema.json",
+    "README.md",
+    "LICENSE"
+  ],
   "publishConfig": {
-    "@arpentnoir:registry": "https://npm.pkg.github.com"
-  }
+    "access": "public"
+  },
+  "repository": "git@github.com:uport-project/veramo.git",
+  "author": "Mircea Nistor <mircea.nistor@mesh.xyz>",
+  "license": "Apache-2.0",
+  "keywords": [],
+  "type": "module",
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ]
 }
