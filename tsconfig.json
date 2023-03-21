@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.settings.json",
+  "extends": "./tsconfig.settings.json",
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "build",
@@ -10,7 +10,7 @@
   },
   "include": ["src/**/*.json", "src/**/*.ts"],
   "references": [
-    { "path": "../core-types" },
-    { "path": "../utils" }
+    { "path": "./core-types" },
+    { "path": "./utils" }
   ]
 }
