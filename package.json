@@ -1,7 +1,7 @@
 {
   "name": "@arpentnoir/traceability-vocab",
   "description": "Veramo plugin for working with W3C JSON-LD Verifiable Credentials & Presentations.",
-  "version": "5.1.7",
+  "version": "5.1.9",
   "main": "build/index.js",
   "exports": {
     ".": "./build/index.js",
@@ -61,6 +61,7 @@
   "type": "module",
   "moduleDirectories": [
     "node_modules",
-    "src"
+    "src",
+    "build"
   ]
 }
